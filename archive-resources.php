@@ -13,6 +13,7 @@
  $files = rwmb_meta( 'team_fields_resource_icon', array( 'limit' => 1 ) );
  $file = reset( $files );
 
+ // get_template_part( 'partials/loader' );
  get_header(); ?>
  <div class="container-fluid">
 
@@ -27,18 +28,17 @@
             </div>
           </div>
           <div class="uu-section smoke">
-   	        <div class="twelve-eighty row clearfix">
               <div class="resource-item-container">
 
                 <!-- Work Item -->
                 <div class="resource-item uu-card theme-download">
                   <a href="#">
                   <div class="uu-card-body">
-                    <div class="item">
-                      <img src="http://localhost/projects/digital.utah.edu/wp-content/uploads/2018/10/phone-theme.png" alt="" class="phone-theme">
+                    <div class="item" data-aos="fade-right">
+                      <img src="http://localhost/dev/digital.utah.edu/wp-content/uploads/2018/10/phone-theme.png" alt="" class="phone-theme" >
                     </div>
                     <div class="item">
-                      <img src="http://localhost/projects/digital.utah.edu/wp-content/uploads/2018/10/icon-wordpress.svg" alt="" class="resource-item-icon">
+                      <img src="http://localhost/dev/digital.utah.edu/wp-content/uploads/2018/10/icon-wordpress.svg" alt="" class="resource-item-icon">
                       <h5>OFFICIAL UMC DIGITAL WORDPRESS THEME</h5>
                       <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
                       <button type="button" name="button" class="uu-btn ebony">Download</button>
@@ -65,8 +65,10 @@
               </div>
 
 
-   			    </div><!-- #ten twenty four -->
+
           </div>
+
+          <?php get_template_part( 'partials/c2a' ); ?>
 
          </main><!-- #main -->
      </div><!-- #primary -->

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.977 113.838">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2.632px;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-linecap: square;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="_x31_4_1_" transform="translate(0.016 0.016)">
+    <path id="Path_278" data-name="Path 278" class="cls-1" d="M135.645,12.351V94.374H1.3V1.3H135.645"/>
+    <path id="Path_279" data-name="Path 279" class="cls-2" d="M65.227,61.416V73.331H30V55.2H65.227" transform="translate(20.859 39.174)"/>
+    <line id="Line_38" data-name="Line 38" class="cls-2" x2="60.438" transform="translate(38.253 112.506)"/>
+    <line id="Line_39" data-name="Line 39" class="cls-2" x2="123.811" transform="translate(1.3 78.833)"/>
+    <rect id="Rectangle_135" data-name="Rectangle 135" class="cls-1" width="24.002" height="53.185" transform="translate(98.691 13.388)"/>
+    <line id="Line_40" data-name="Line 40" class="cls-1" x2="2.763" transform="translate(15.114 13.388)"/>
+    <line id="Line_41" data-name="Line 41" class="cls-1" x2="2.763" transform="translate(15.114 22.712)"/>
+    <line id="Line_42" data-name="Line 42" class="cls-1" x2="2.763" transform="translate(15.114 31.864)"/>
+    <line id="Line_43" data-name="Line 43" class="cls-1" x2="2.763" transform="translate(15.114 41.189)"/>
+    <line id="Line_44" data-name="Line 44" class="cls-1" x2="2.763" transform="translate(15.114 50.514)"/>
+    <line id="Line_45" data-name="Line 45" class="cls-3" x2="6.734" transform="translate(107.325 22.194)"/>
+    <line id="Line_46" data-name="Line 46" class="cls-3" x2="6.734" transform="translate(107.325 31.346)"/>
+    <line id="Line_47" data-name="Line 47" class="cls-3" x2="6.734" transform="translate(107.325 40.326)"/>
+    <line id="Line_48" data-name="Line 48" class="cls-3" x2="6.734" transform="translate(107.325 49.478)"/>
+    <line id="Line_49" data-name="Line 49" class="cls-3" x2="6.734" transform="translate(107.325 58.457)"/>
+    <line id="Line_50" data-name="Line 50" class="cls-1" x2="56.984" transform="translate(29.447 67.091)"/>
+    <line id="Line_51" data-name="Line 51" class="cls-1" x1="56.984" transform="translate(29.447 13.388)"/>
+    <path id="Path_280" data-name="Path 280" class="cls-1" d="M55.2,35.334,46.916,26.7,38.8,35.334" transform="translate(27.255 18.461)"/>
+    <path id="Path_281" data-name="Path 281" class="cls-1" d="M20.7,40.131,39.522,20.1,49.883,30.979" transform="translate(14.1 13.664)"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-1" cx="4.317" cy="4.317" r="4.317" transform="translate(74.171 26.166)"/>
+  </g>
+</svg>

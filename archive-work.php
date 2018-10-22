@@ -9,7 +9,7 @@
  *
  * @package umctheme2-child-digital
  */
-
+ // get_template_part( 'partials/loader' );
  get_header(); ?>
  <div class="container-fluid">
 
@@ -29,7 +29,7 @@
 
             <?php while ( have_posts() ) : the_post(); ?>
                 <!-- Work Item -->
-                <div class="work-item">
+                <div class="work-item" data-aos="fade-up">
                   <a href="<?php echo get_permalink(); ?>">
                   <div class="work-item-content">
                     <h5><?php the_title(); ?></h5>
@@ -46,6 +46,8 @@
 
 
  			    </div><!-- #ten twenty four -->
+
+          <?php get_template_part( 'partials/c2a' ); ?>
 
          </main><!-- #main -->
      </div><!-- #primary -->

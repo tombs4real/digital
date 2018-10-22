@@ -13,16 +13,18 @@
 function digital_scripts() {
 
  // Styles
- // // Enqueue Custom Stylesheet
- // wp_enqueue_style( 'custom-style', get_stylesheet_uri() );
+ // Enqueue Custom Stylesheet
+ wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css' );
 
  // Scripts
  // Youtube Embed API Script
- wp_enqueue_script('ytapi','https://www.youtube.com/iframe_api', array(), '', true);
+ wp_enqueue_script('ytapi','https://www.youtube.com/iframe_api', array(), '', true );
  // GSAP TimeLine Script
- wp_enqueue_script('gsap', get_stylesheet_directory_uri() . '/js/TweenMax.min.js', array(),'', true);
+ wp_enqueue_script('gsap', get_stylesheet_directory_uri() . '/js/TweenMax.min.js', array(), '', true );
+ // Animate on Scroll Script
+ wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '', true );
  // Enqueue Custom Script
- wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array(), true);
+ wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array(), '', true );
 
  // if(is_page('home-page')){
  //   add_action('wp_enqueue_scripts', 'custom');
@@ -135,7 +137,7 @@ function create_posttype() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'services'),
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'taxonomies'  => array( 'category' ),
             'menu_icon' => 'dashicons-thumbs-up',
             'menu_position' => 5
@@ -190,7 +192,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 	 */
 	// Better has an underscore as last sign
 	$prefix = 'team_fields_';
-	// 1st meta box
+	// meta box
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
 		'id'         => 'team',
@@ -245,8 +247,8 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			)
 		)
 	);
-  // end 1st meta box
-  // 2nd meta box
+  // end meta box
+  // meta box
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
 		'id'         => 'resources',
@@ -273,7 +275,149 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 		),
 
 	);
-  // end 2nd meta box
+  // end meta box
+
+  // Work Projects / Case Study Meta Boxes
+  // meta box
+	$meta_boxes[] = array(
+		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+		'id'         => 'work_overview',
+		// Meta box title - Will appear at the drag and drop handle bar. Required.
+		'title'      => __( 'Project Overview', 'work_fields' ),
+		// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+		'post_types' => array( 'work' ),
+		// Where the meta box appear: normal (default), advanced, side. Optional.
+		'context'    => 'after_title',
+		// Order of meta box: high (default), low. Optional.
+		'priority'   => 'high',
+		// Auto save: true, false (default). Optional.
+		'autosave'   => true,
+		// List of meta fields
+		'fields'     => array(
+      // Tite (Text Field)
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Title', 'work_fields' ),
+				// Field ID, i.e. the meta key
+				'id'    => "{$prefix}overview_title",
+				'type'  => 'text',
+			),
+      // Tite Subhead (Text Field)
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Subhead', 'work_fields' ),
+				// Field ID, i.e. the meta key
+				'id'    => "{$prefix}overview_subhead",
+				'type'  => 'text',
+			),
+      // Overview Copy
+			array(
+				'name'    => __( 'Overview', 'work_fields' ),
+				'id'      => "{$prefix}overview_copy",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 10,
+					'teeny'         => true,
+					'media_buttons' => false,
+          'wpautop' => false,
+				),
+			),
+		),
+	);
+  // end meta box
+  // meta box
+	$meta_boxes[] = array(
+		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+		'id'         => 'work_video',
+		// Meta box title - Will appear at the drag and drop handle bar. Required.
+		'title'      => __( 'Preview Video(For Desktop)', 'work_fields' ),
+		// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+		'post_types' => array( 'work' ),
+		// Where the meta box appear: normal (default), advanced, side. Optional.
+		'context'    => 'after_title',
+		// Order of meta box: high (default), low. Optional.
+		'priority'   => 'low',
+		// Auto save: true, false (default). Optional.
+		'autosave'   => true,
+		// List of meta fields
+		'fields'     => array(
+      // TEXT
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'YouTube Video ID', 'work_fields' ),
+				// Field ID, i.e. the meta key
+				'id'    => "{$prefix}work_video_id",
+				// Field description (optional)
+				'desc'  => __( 'You can find the id in the Video URL: https://www.youtube.com/watch?v=<b>vS86LAri7W0</b>', 'your-prefix' ),
+				'type'  => 'text',
+			),
+		),
+
+	);
+  // end meta box
+  // meta box
+	$meta_boxes[] = array(
+		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+		'id'         => 'work_mobile_overview',
+		// Meta box title - Will appear at the drag and drop handle bar. Required.
+		'title'      => __( 'Mobile Overview', 'work_fields' ),
+		// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+		'post_types' => array( 'work' ),
+		// Where the meta box appear: normal (default), advanced, side. Optional.
+		'context'    => 'after_title',
+		// Order of meta box: high (default), low. Optional.
+		'priority'   => 'low',
+		// Auto save: true, false (default). Optional.
+		'autosave'   => true,
+		// List of meta fields
+		'fields'     => array(
+      // FILE ADVANCED (WP 3.5+)
+			array(
+				'name'             => __( 'Mobile Preview Image', 'work_fields' ),
+				'id'               => "{$prefix}work_mobile_img",
+				'type'             => 'file_advanced',
+				'max_file_uploads' => 1,
+				'mime_type'        => '', // Leave blank for all file types
+			),
+      // Tite (Text Field)
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Title', 'work_fields' ),
+				// Field ID, i.e. the meta key
+				'id'    => "{$prefix}mobile_overview_title",
+				'type'  => 'text',
+			),
+      // Tite Subhead (Text Field)
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Subhead', 'work_fields' ),
+				// Field ID, i.e. the meta key
+				'id'    => "{$prefix}mobile_overview_subhead",
+				'type'  => 'text',
+			),
+      // Overview Copy
+			array(
+				'name'    => __( 'Overview', 'work_fields' ),
+				'id'      => "{$prefix}mobile_overview_copy",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 10,
+					'teeny'         => true,
+					'media_buttons' => false,
+          'wpautop' => false,
+				),
+			),
+		),
+	);
+  // end meta box
+
+
 	return $meta_boxes;
 }
 

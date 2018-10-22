@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.268 91.132">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2.632px;
+      }
+    </style>
+  </defs>
+  <g id="_x31_7_1_" transform="translate(-0.531 0.037)">
+    <rect id="Rectangle_136" data-name="Rectangle 136" class="cls-1" width="88.5" height="141.636" transform="translate(143.482 1.28) rotate(90)"/>
+    <g id="Group_222" data-name="Group 222" transform="translate(-1.663)">
+      <line id="Line_52" data-name="Line 52" class="cls-1" x2="80.422" transform="translate(52.193 74.917)"/>
+      <line id="Line_53" data-name="Line 53" class="cls-1" x2="8.437" transform="translate(35.14 74.917)"/>
+      <line id="Line_54" data-name="Line 54" class="cls-1" y1="12.027" transform="translate(45.551 68.813)"/>
+      <line id="Line_55" data-name="Line 55" class="cls-1" y1="12.027" transform="translate(25.805 68.813)"/>
+      <line id="Line_56" data-name="Line 56" class="cls-1" y1="12.027" transform="translate(17.009 68.813)"/>
+    </g>
+    <g id="Group_221" data-name="Group 221" transform="translate(3.051)">
+      <path id="Path_282" data-name="Path 282" class="cls-1" d="M36.7,18V35.054l13.643-8.617Z" transform="translate(28.111 13.295)"/>
+      <path id="Path_283" data-name="Path 283" class="cls-1" d="M65.736,20.894a20.952,20.952,0,0,1,3.052,10.95A20.644,20.644,0,1,1,48.144,11.2a21.285,21.285,0,0,1,9.514,2.334" transform="translate(20.796 7.888)"/>
+    </g>
+  </g>
+</svg>
